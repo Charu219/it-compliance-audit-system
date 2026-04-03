@@ -6,7 +6,8 @@ export default function Layout({ children }) {
 
   return (
     <div className="layout">
-      {/* Mobile Header */}
+
+      {/* Mobile Header - only shows on mobile */}
       <div className="mobile-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{
@@ -24,26 +25,34 @@ export default function Layout({ children }) {
             background: 'var(--bg-hover)',
             border: '1px solid var(--border)',
             borderRadius: 8,
-            padding: '6px 10px',
+            padding: '6px 12px',
             color: 'var(--text-primary)',
             cursor: 'pointer',
-            fontSize: 18
+            fontSize: 20,
+            lineHeight: 1
           }}>
           ☰
         </button>
       </div>
 
-      {/* Overlay when sidebar open on mobile */}
+      {/* Dark overlay - shows behind sidebar on mobile */}
       {sidebarOpen && (
-        <div className="overlay" onClick={() => setSidebarOpen(false)} />
+        <div
+          className="overlay"
+          onClick={() => setSidebarOpen(false)}
+        />
       )}
 
-      {/* Sidebar */}
-      <div className={sidebarOpen ? 'sidebar open' : 'sidebar'}>
+      {/* Sidebar - gets 'open' class on mobile when toggled */}
+      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
         <Sidebar onClose={() => setSidebarOpen(false)} />
       </div>
 
-      <main className="main-content">{children}</main>
+      {/* Main content */}
+      <main className="main-content">
+        {children}
+      </main>
+
     </div>
   );
 }

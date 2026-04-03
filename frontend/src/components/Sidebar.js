@@ -57,7 +57,7 @@ export default function Sidebar({ onClose }) {
   };
 
   return (
-    <aside className="sidebar">
+     <aside style={{ height: '100%', display: 'flex', flexDirection: 'column', background: 'var(--bg-secondary)', borderRight: '1px solid var(--border)' }}>
       <div className="sidebar-logo">
         <div className="logo-icon">🛡️</div>
         <div>
