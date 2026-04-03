@@ -31,7 +31,8 @@ export default function Login() {
 
 
 const handleGoogleLogin = () => {
-  window.location.href = 'http://localhost:5000/api/auth/google';
+  const base = process.env.REACT_APP_API_URL?.replace('/api','') || 'http://localhost:5000';
+  window.location.href = `${base}/api/auth/google`;
 };
 
 
