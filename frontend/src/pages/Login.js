@@ -31,8 +31,7 @@ export default function Login() {
 
 
 const handleGoogleLogin = () => {
-  const base = process.env.REACT_APP_API_URL?.replace('/api','') || 'http://localhost:5000';
-  window.location.href = `${base}/api/auth/google`;
+  window.location.href = 'https://it-compliance-audit-system-2.onrender.com/api/auth/google';
 };
 
 
