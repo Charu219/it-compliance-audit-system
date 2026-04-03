@@ -641,6 +641,7 @@ textarea.form-control { resize: vertical; min-height: 80px; }
 .animate-in { animation: slideUp 0.3s ease forwards; }
 
 /* Responsive */
+/* Responsive */
 @media (max-width: 1024px) {
   .form-grid { grid-template-columns: 1fr; }
   .dashboard-grid { grid-template-columns: 1fr; }
@@ -648,15 +649,33 @@ textarea.form-control { resize: vertical; min-height: 80px; }
   .auth-right { width: 100%; }
 }
 
+/* Mobile Header - hidden on desktop */
+.mobile-header { display: none; }
+.overlay { display: none; }
+
 @media (max-width: 768px) {
+  /* Sidebar hidden by default on mobile */
   .sidebar {
     transform: translateX(-100%);
-    z-index: 999;
     transition: transform 0.3s ease;
+    z-index: 999;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 260px;
   }
-  .sidebar.open { transform: translateX(0); }
-  .main-content { margin-left: 0; }
-  .page-header, .page-content { padding-left: 16px; padding-right: 16px; }
+
+  /* Sidebar visible when open */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Main content takes full width */
+  .main-content {
+    margin-left: 0 !important;
+    width: 100%;
+  }
+
+  /* Show mobile header */
   .mobile-header {
     display: flex !important;
     align-items: center;
@@ -668,17 +687,55 @@ textarea.form-control { resize: vertical; min-height: 80px; }
     top: 0;
     z-index: 100;
   }
+
+  /* Dark overlay behind sidebar */
   .overlay {
     display: block !important;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     z-index: 998;
   }
-  .stats-grid { grid-template-columns: 1fr !important; }
-  .dashboard-grid { grid-template-columns: 1fr !important; }
-  .form-grid { grid-template-columns: 1fr !important; }
-}
 
-.mobile-header { display: none; }
-.overlay { display: none; }
+  /* Stack grids vertically */
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix page padding */
+  .page-header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .page-content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Fix table overflow */
+  .table-container {
+    overflow-x: auto;
+  }
+
+  /* Fix review panel on mobile */
+  div[style*="grid-template-columns: 340px"] {
+    display: block !important;
+  }
+
+  div[style*="grid-template-columns: 420px"] {
+    display: block !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 380px"] {
+    display: block !important;
+  }
+}
