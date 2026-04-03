@@ -13,7 +13,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',
-    'https://it-compliance-audit-system-2.onrender.com'
+    'https://it-compliance-audit-system-1.onrender.com'
   ],
   credentials: true
 }));
