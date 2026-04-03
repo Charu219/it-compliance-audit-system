@@ -37,7 +37,7 @@ const departmentNav = [
 
 const navMap = { admin: adminNav, auditor: auditorNav, department: departmentNav };
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,6 +48,12 @@ export default function Sidebar() {
   const handleLogout = () => {
     logout();
     navigate('/login');
+    if (onClose) onClose();
+  };
+
+  const handleNavigate = (path) => {
+    navigate(path);
+    if (onClose) onClose();
   };
 
   return (
@@ -68,7 +74,7 @@ export default function Sidebar() {
               <button
                 key={item.path}
                 className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
-                onClick={() => navigate(item.path)}
+                onClick={() => handleNavigate(item.path)}
               >
                 <span className="nav-icon">{item.icon}</span>
                 {item.label}
