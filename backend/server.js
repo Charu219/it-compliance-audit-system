@@ -11,7 +11,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:3000',
+
+  origin: ['http://localhost:3000',
+  'https://it-compliance-audit-system-1.onrender.com '
+  ],
   credentials: true
 }));
 app.use(express.json());
