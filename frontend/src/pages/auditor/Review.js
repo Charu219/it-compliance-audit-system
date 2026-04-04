@@ -132,7 +132,16 @@ export default function AuditorReview() {
                       <div key={ev._id} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '8px 0', borderBottom: '1px solid var(--border)' }}>
                         <span style={{ fontSize: 20 }}>{getFileIcon(ev.originalName)}</span>
                         <div style={{ flex: 1 }}>
-                          <a href={`http://localhost:5000${ev.filePath}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', fontSize: 13, textDecoration: 'none' }}>{ev.originalName}</a>
+
+
+
+
+
+
+                          <a href={`https://it-compliance-audit-system-2.onrender.com${ev.filePath}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', fontSize: 13, textDecoration: 'none' }}>{ev.originalName}</a>
+                            
+
+
                           <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
                             {ev.uploadedBy?.name} • {(ev.fileSize / 1024).toFixed(1)} KB • {new Date(ev.uploadedAt).toLocaleDateString()}
                           </div>

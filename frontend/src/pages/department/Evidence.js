@@ -163,9 +163,18 @@ export default function DepartmentEvidence() {
                       <div key={ev._id} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 20px', borderBottom: '1px solid var(--border)', transition: 'background 0.15s' }}>
                         <span style={{ fontSize: 28 }}>{getFileIcon(ev.originalName)}</span>
                         <div style={{ flex: 1, overflow: 'hidden' }}>
-                          <a href={`http://localhost:5000${ev.filePath}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', fontSize: 13, fontWeight: 500, textDecoration: 'none' }}>
-                            {ev.originalName}
+
+
+
+
+
+                          <a href={`https://it-compliance-audit-system-2.onrender.com${ev.filePath}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-blue)', fontSize: 13, fontWeight: 500, textDecoration: 'none' }}>
                           </a>
+
+
+                          
+
+
                           <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>
                             {ev.checklist?.title} • {formatSize(ev.fileSize)} • {new Date(ev.uploadedAt).toLocaleDateString()}
                           </div>
