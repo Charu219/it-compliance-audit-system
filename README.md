@@ -2,6 +2,22 @@
 
 A full-stack compliance audit management platform with role-based access control for Admins, Auditors, and Departments.
 
+LIVE DEMO: https://it-compliance-audit-system-1.onrender.com
+
+🔐 Demo Login Credentials
+You can explore the system using the following roles:
+👨‍💼 Admin Account
+Email: admin@itcompliance.com
+Password: Admin@123
+
+🧾 Auditor Account
+Email: priya@itcompliance.com
+Password: Audit@123
+
+🏢 Department Account
+Email: kumar@itcompliance.com
+Password: Dept@123
+
 ---
 
 ## 🏗️ Tech Stack
